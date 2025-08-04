@@ -37,7 +37,7 @@ function HomePage() {
 
 function App() {
   return (
-    <Router>
+    <Router   basename="/NurseRaych2">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/join-campaign" element={<JoinCampaignPage />} />
