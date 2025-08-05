@@ -137,7 +137,7 @@ export function MeetNurseRaych() {
     <div className="backdrop-blur-md bg-white/10 rounded-2xl p-4 border border-white/20 hover:bg-white/15 transition-all duration-300 transform hover:scale-105 group overflow-hidden">
       <div className="w-full h-48 relative rounded-lg overflow-hidden mb-4">
         <img
-          src="/images/image1.jpeg"
+          src="/NurseRaych2/images/image1.jpeg"
           alt="Raych providing care"
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 brightness-90 group-hover:brightness-100"
         />
@@ -155,7 +155,7 @@ export function MeetNurseRaych() {
     <div className="backdrop-blur-md bg-white/10 rounded-2xl p-4 border border-white/20 hover:bg-white/15 transition-all duration-300 transform hover:scale-105 group overflow-hidden">
       <div className="w-full h-48 relative rounded-lg overflow-hidden mb-4">
         <img
-          src="/images/image2.jpeg"
+          src="/NurseRaych2/images/image2.jpeg"
           alt="health events"
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 brightness-90 group-hover:brightness-100"
         />
@@ -173,7 +173,7 @@ export function MeetNurseRaych() {
     <div className="backdrop-blur-md bg-white/10 rounded-2xl p-4 border border-white/20 hover:bg-white/15 transition-all duration-300 transform hover:scale-105 group overflow-hidden">
       <div className="w-full h-48 relative rounded-lg overflow-hidden mb-4">
         <img
-          src="/images/image3.jpeg"
+          src="/NurseRaych2/images/image3.jpeg"
           alt="Community talks"
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 brightness-90 group-hover:brightness-100"
         />

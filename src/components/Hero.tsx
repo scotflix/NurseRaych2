@@ -29,7 +29,7 @@ export function Hero() {
       {/* Floating Elements */}
      <div className="absolute top-20 left-10 w-20 h-20 rounded-full opacity-80 animate-pulse overflow-hidden">
   <img
-    src="/images/image5.jpeg" // or your image path
+    src="/NurseRaych2//images/image5.jpeg" // or your image path
     alt="Decorative element"
     className="w-full h-full object-cover mix-blend-screen"
   />
@@ -37,7 +37,7 @@ export function Hero() {
 
 <div className="absolute bottom-20 right-10 w-32 h-32 rounded-full opacity-80 animate-pulse delay-1000 overflow-hidden">
   <img
-    src="/images/image5.jpeg" // or your image path
+    src="/NurseRaych2/images/image5.jpeg" // or your image path
     alt="Decorative element"
     className="w-full h-full object-cover mix-blend-overlay"
   />
@@ -51,7 +51,7 @@ export function Hero() {
       <div className="w-full h-full rounded-full overflow-hidden bg-slate-800 flex items-center justify-center relative border-4 border-white/20">
         {/* Actual Image */}
         <img
-          src="/public/images/image6.png" // Update with your image path
+          src="/NurseRaych2/images/image6.png" // Update with your image path
           alt="Nurse Raych "
           className="w-full h-full object-cover"
         />       
