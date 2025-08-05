@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { GraduationCap, MapPin, Megaphone, Globe, Trophy, Calendar } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { GraduationCap, MapPin, Megaphone, Globe, Trophy} from 'lucide-react';
 
 const timelineEvents = [
   {

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import  { useEffect, useRef, useState } from 'react';
 import { Shield, Loader2 } from 'lucide-react';
 
 interface PayPalCheckoutProps {
@@ -15,7 +15,7 @@ declare global {
   }
 }
 
-export function PayPalCheckout({ amount, currency, onSuccess, onError, customerInfo }: PayPalCheckoutProps) {
+export function PayPalCheckout({ amount, currency, onSuccess, onError }: PayPalCheckoutProps) {
   const paypalRef = useRef<HTMLDivElement>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [scriptLoaded, setScriptLoaded] = useState(false);
@@ -48,7 +48,7 @@ export function PayPalCheckout({ amount, currency, onSuccess, onError, customerI
   useEffect(() => {
     if (scriptLoaded && window.paypal && paypalRef.current) {
       window.paypal.Buttons({
-        createOrder: (data: any, actions: any) => {
+        createOrder: (_data: any, actions: any) => {
           return actions.order.create({
             purchase_units: [{
               amount: {
@@ -66,7 +66,7 @@ export function PayPalCheckout({ amount, currency, onSuccess, onError, customerI
             },
           });
         },
-        onApprove: async (data: any, actions: any) => {
+        onApprove: async (_data: any, actions: any) => {
           try {
             const details = await actions.order.capture();
             onSuccess(details);

@@ -75,7 +75,7 @@ export function useDonationStats(): DonationStats {
           livesTouched,
           communitiesServed,
           yearsOfImpact,
-          totalDonations: data.total_donations || 0,
+          totalDonations: data.totalDonations || 0,
           totalAmount: totalAmountUSD,
           isLoading: false,
           error: null,

@@ -51,7 +51,7 @@ export function Hero() {
       <div className="w-full h-full rounded-full overflow-hidden bg-slate-800 flex items-center justify-center relative border-4 border-white/20">
         {/* Actual Image */}
         <img
-          src="/images/image6.png" // Update with your image path
+          src="/public/images/image6.png" // Update with your image path
           alt="Nurse Raych "
           className="w-full h-full object-cover"
         />       

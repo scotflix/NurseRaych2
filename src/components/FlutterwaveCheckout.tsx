@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Smartphone, Shield, Loader2, CheckCircle, AlertCircle, Info, ExternalLink } from 'lucide-react';
+import  { useState, useEffect } from 'react';
+import { Smartphone, Shield, Loader2, CheckCircle, AlertCircle, Info } from 'lucide-react';
 import { createClient } from '@supabase/supabase-js';
 
 interface FlutterwaveCheckoutProps {
