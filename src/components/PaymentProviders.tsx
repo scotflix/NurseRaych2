@@ -1,6 +1,6 @@
 import React from 'react';
 import { Elements } from '@stripe/react-stripe-js';
-import { stripePromise } from '@/lib/payments';
+import { stripePromise } from '@/lib/stripe';
 
 interface PaymentProvidersProps {
   children: React.ReactNode;
@@ -8,7 +8,7 @@ interface PaymentProvidersProps {
 }
 
 export function PaymentProviders({ children, clientSecret }: PaymentProvidersProps) {
-  const options = {
+  const options = clientSecret ? {
     clientSecret,
     appearance: {
       theme: 'night' as const,
@@ -22,10 +22,10 @@ export function PaymentProviders({ children, clientSecret }: PaymentProvidersPro
         borderRadius: '12px',
       },
     },
-  };
+  } : undefined;
 
   return (
-    <Elements stripe={stripePromise} options={clientSecret ? options : undefined}>
+    <Elements stripe={stripePromise} options={options}>
       {children}
     </Elements>
   );

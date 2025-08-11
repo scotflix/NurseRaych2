@@ -134,7 +134,7 @@ const CertificateGenerator: React.FC<{
     ctx.fillText('Certificate of Participation', canvas.width / 2, 110);
     
     ctx.font = '18px Arial';
-    ctx.fillText('Youth Health Education Campaign', canvas.width / 2, 135);
+    ctx.fillText(' Health Education Campaign', canvas.width / 2, 135);
 
     // Main content
     ctx.fillStyle = '#1f2937';
@@ -202,7 +202,7 @@ const CertificateGenerator: React.FC<{
                 {/* Header */}
                 <div className="bg-gradient-to-r from-purple-500 to-cyan-500 text-white py-4 rounded-xl mb-8">
                   <h3 className="text-2xl font-bold">Certificate of Participation</h3>
-                  <p className="text-purple-100">Youth Health Education Campaign</p>
+                  <p className="text-purple-100"> Health Education Campaign</p>
                 </div>
 
                 {/* Content */}

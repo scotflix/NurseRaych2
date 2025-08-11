@@ -2,11 +2,10 @@ import  { useState, useEffect } from 'react';
 import { Navigation } from './Navigation';
 import { PaymentProviders } from './PaymentProviders';
 import { StripeCheckout } from './StripeCheckout';
-import { PayPalCheckout } from './PayPalCheckout';
-import { FlutterwaveCheckout } from './FlutterwaveCheckout';
+//import { PayPalCheckout } from './PayPalCheckout';
+//import { FlutterwaveCheckout } from './FlutterwaveCheckout';
 import { 
-  CreditCard, 
-  Smartphone, 
+  CreditCard,  
   Shield,  
   Heart, 
   CheckCircle, 
@@ -75,7 +74,9 @@ const paymentMethods = [
     description: 'Visa, Mastercard, Apple Pay, Google Pay',
     badge: 'Most Popular',
     color: 'from-purple-500 to-cyan-500'
-  },
+  }
+
+ /* 
   {
     id: 'paypal',
     name: 'PayPal',
@@ -92,6 +93,8 @@ const paymentMethods = [
     badge: 'Local Favorite',
     color: 'from-cyan-500 to-green-500'
   }
+*/
+  
 ];
 
 export function DonationCheckoutPage() {
@@ -170,16 +173,7 @@ export function DonationCheckoutPage() {
     }
   };
 
-  const handlePaymentSuccess = (paymentData: any) => {
-    console.log('Payment successful:', paymentData);
-    setCurrentStep('success');
-  };
 
-  const handlePaymentError = (error: string) => {
-    console.error('Payment error:', error);
-    setPaymentErrors([error]);
-    setIsProcessingPayment(false);
-  };
 
   const handleDonate = async () => {
     const errors = validatePaymentForm(donorInfo, selectedPayment);
@@ -377,7 +371,7 @@ export function DonationCheckoutPage() {
     return (
       <PaymentProviders clientSecret={stripeClientSecret}>
         <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-          <Navigation />
+          
           <div className="pt-20 pb-20">
             <div className="container mx-auto px-6">
               <div className="max-w-2xl mx-auto">
@@ -411,14 +405,11 @@ export function DonationCheckoutPage() {
                 {/* Payment Component */}
                 {selectedPayment === 'stripe' && (
                   <StripeCheckout
-                    amount={getCurrentAmount()}
+                    amount={getCurrentAmount()} // Example: 100 means $100
                     currency={currency}
-                    onSuccess={handlePaymentSuccess}
-                    onError={handlePaymentError}
-                    customerInfo={donorInfo}
-                  />
+                     customerInfo={donorInfo}                  />
                 )}
-
+    {/*
                 {selectedPayment === 'paypal' && (
                   <PayPalCheckout
                     amount={getCurrentAmount()}
@@ -438,6 +429,8 @@ export function DonationCheckoutPage() {
                     customerInfo={donorInfo}
                   />
                 )}
+
+   */}             
               </div>
             </div>
           </div>
@@ -575,6 +568,8 @@ export function DonationCheckoutPage() {
               <div className={`transition-all duration-1000 delay-500 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
                 <h3 className="text-2xl font-bold text-white mb-6">Payment Method</h3>
                 
+
+        {/*      
                 {/* Flutterwave Configuration Status */}
                 {flutterwaveConfig && !flutterwaveConfig.isConfigured && (
                   <div className="backdrop-blur-md bg-yellow-500/20 rounded-2xl p-4 border border-yellow-500/30 mb-6">
@@ -586,7 +581,8 @@ export function DonationCheckoutPage() {
                     </div>
                   </div>
                 )}
-                
+          
+
                 {/* Payment Method Tabs */}
                 <div className="backdrop-blur-md bg-white/10 rounded-3xl p-8 border border-white/20 mb-8">
                   <div className="space-y-4 mb-8">
@@ -656,13 +652,14 @@ export function DonationCheckoutPage() {
                 <div className="backdrop-blur-md bg-white/10 rounded-2xl p-6 border border-white/20 mb-8">
                   <h4 className="text-lg font-semibold text-white mb-4">Donor Information</h4>
                   <div className="space-y-4">
-                    <input
+                    {/*<input
                       type="text"
                       placeholder="Full Name"
                       value={donorInfo.name}
                       onChange={(e) => setDonorInfo({...donorInfo, name: e.target.value})}
                       className="w-full px-4 py-3 rounded-xl backdrop-blur-md bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-purple-500"
                     />
+                    */}
                     <input
                       type="email"
                       placeholder="Email Address"
@@ -670,6 +667,7 @@ export function DonationCheckoutPage() {
                       onChange={(e) => setDonorInfo({...donorInfo, email: e.target.value})}
                       className="w-full px-4 py-3 rounded-xl backdrop-blur-md bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-purple-500"
                     />
+                    {/*}
                     {selectedPayment === 'flutterwave' && (
                       <input
                         type="tel"
@@ -679,6 +677,7 @@ export function DonationCheckoutPage() {
                         className="w-full px-4 py-3 rounded-xl backdrop-blur-md bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-purple-500"
                       />
                     )}
+                    */}
                   </div>
                 </div>
 

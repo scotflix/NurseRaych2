@@ -11,6 +11,7 @@ import { Footer } from './components/Footer';
 import { JoinCampaignPage } from './components/JoinCampaignPage';
 import { DonationCheckoutPage } from './components/DonationCheckoutPage';
 import './App.css';
+import { DonationSuccessPage } from './components/DonationSuccessPage';
 
 function HomePage() {
   return (
@@ -42,6 +43,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/join-campaign" element={<JoinCampaignPage />} />
         <Route path="/donate" element={<DonationCheckoutPage />} />
+        <Route path="/donation-success" element={<DonationSuccessPage />}/>
       </Routes>
     </Router>
   );

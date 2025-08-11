@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Users, Heart, MessageCircle, Handshake, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { useCampaignStats, getCampaignStats, formatParticipantCount } from '@/hooks/useCampaignStats';
 
 const testimonials = [
   {
@@ -53,7 +52,6 @@ export function CommunityAdvocacy() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
   const navigate = useNavigate();
-  const { stats, isLoading, error } = useCampaignStats();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -87,6 +85,7 @@ export function CommunityAdvocacy() {
   return (
     <section ref={sectionRef} id="community-section" className="py-20 relative">
       <div className="container mx-auto px-6">
+        {/* Heading */}
         <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Community Advocacy & Leadership
@@ -98,16 +97,12 @@ export function CommunityAdvocacy() {
         </div>
 
         {/* Active Campaigns */}
-        <div className={`mb-16 transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <h3 className="text-3xl font-bold text-white text-center mb-12">Join Nurse Raych in Our Active Campaigns</h3>
+        <div className={`mb-10 transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+          <h3 className="text-3xl font-bold text-white text-center mb-12">Our Active Campaigns</h3>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {campaigns.map((campaign, index) => {
               const Icon = campaign.icon;
-              const campaignStats = getCampaignStats(stats, campaign.title);
-              const participantCount = campaignStats ? formatParticipantCount(campaignStats.total_participants) : '0+';
-              const recentActivity = campaignStats ? campaignStats.recent_participants : 0;
-              
               return (
                 <div
                   key={index}
@@ -117,48 +112,20 @@ export function CommunityAdvocacy() {
                     <Icon className="w-8 h-8 text-white" />
                   </div>
                   <h4 className="text-2xl font-bold text-white mb-4">{campaign.title}</h4>
-                  <p className="text-white/80 mb-6 leading-relaxed">{campaign.description}</p>
-                  <div className="backdrop-blur-md bg-white/10 rounded-2xl p-4 border border-white/20 mb-6">
-                    <div className="flex items-center justify-center space-x-2">
-                      <div className="text-3xl font-bold text-cyan-300">
-                        {isLoading ? (
-                          <div className="animate-pulse bg-white/20 rounded h-8 w-16"></div>
-                        ) : (
-                          participantCount
-                        )}
-                      </div>
-                      {!isLoading && recentActivity > 0 && (
-                        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                      )}
-                    </div>
-                    <div className="text-white/70 text-sm">Community Members Reached</div>
-                    {!isLoading && campaignStats && (
-                      <div className="mt-2 text-xs text-white/60">
-                        {recentActivity > 0 && (
-                          <span className="text-green-300">+{recentActivity} this week</span>
-                        )}
-                        {campaignStats.top_locations.length > 0 && (
-                          <div className="mt-1">
-                            Active in: {campaignStats.top_locations.slice(0, 2).join(', ')}
-                          </div>
-                        )}
-                      </div>
-                    )}
-                    {error && (
-                      <div className="mt-2 text-xs text-red-300">
-                        Live stats unavailable
-                      </div>
-                    )}
-                  </div>
-                  <button 
-                    onClick={handleJoinCampaign}
-                    className={`bg-gradient-to-r ${campaign.gradient} text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105`}
-                  >
-                    Join Campaign
-                  </button>
+                  <p className="text-white/80 leading-relaxed">{campaign.description}</p>
                 </div>
               );
             })}
+          </div>
+
+          {/* Single Join Campaign Button */}
+          <div className="text-center mt-8">
+            <button 
+              onClick={handleJoinCampaign}
+              className="bg-gradient-to-r from-purple-500 to-cyan-500 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+            >
+              Join Campaign
+            </button>
           </div>
         </div>
 
@@ -222,7 +189,6 @@ export function CommunityAdvocacy() {
               "We keep it local. We keep it transparent. Every shilling goes directly into improving lives."
             </blockquote>
             <cite className="text-purple-300 font-semibold">— Nurse Raych</cite>
-            
           </div>
         </div>
       </div>

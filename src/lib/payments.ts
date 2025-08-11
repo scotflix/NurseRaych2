@@ -1,4 +1,4 @@
-import { loadStripe } from '@stripe/stripe-js';
+import { createPaymentIntent } from './stripe';
 
 // Payment configuration
 export const PAYMENT_CONFIG = {
@@ -16,16 +16,11 @@ export const PAYMENT_CONFIG = {
   }
 };
 
-// Initialize Stripe
-export const stripePromise = loadStripe(PAYMENT_CONFIG.stripe.publishableKey, {
-  // Disable Apple Pay to avoid domain verification issues in development
-  stripeAccount: undefined,
-});
 
 // Currency conversion rates (in production, fetch from API)
 export const CURRENCY_RATES = {
   USD: 1,
-  KES: 130,
+  KES: 1,
   EUR: 0.9,
   NGN: 1650,
   GHS: 16
@@ -56,33 +51,8 @@ export const PAYMENT_METHOD_PREFERENCES: Record<string, string[]> = {
   'default': ['stripe', 'paypal', 'flutterwave']
 };
 
-// Stripe Payment Intent creation
-export const createStripePaymentIntent = async (amount: number, currency: string, metadata: any) => {
-  try {
-    const response = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/create-payment-intent`, {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        amount,
-        currency,
-        metadata,
-      }),
-    });
-
-    if (!response.ok) {
-      const errorData = await response.json();
-      throw new Error(errorData.error || 'Failed to create payment intent');
-    }
-
-    return await response.json();
-  } catch (error) {
-    console.error('Error creating payment intent:', error);
-    throw error;
-  }
-};
+// Re-export Stripe Payment Intent creation
+export const createStripePaymentIntent = createPaymentIntent;
 
 // PayPal order creation
 export const createPayPalOrder = (amount: number, currency: string) => {
