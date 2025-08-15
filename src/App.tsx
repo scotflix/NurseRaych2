@@ -12,6 +12,7 @@ import { JoinCampaignPage } from './components/JoinCampaignPage';
 import { DonationCheckoutPage } from './components/DonationCheckoutPage';
 import './App.css';
 import { DonationSuccessPage } from './components/DonationSuccessPage';
+import Founders from './components/Founders';
 
 function HomePage() {
   return (
@@ -31,6 +32,7 @@ function HomePage() {
       <CommunityAdvocacy />
       <MeetNurseRaych />
       <DonatePage />
+      <Founders />
       <Footer />
     </div>
   );
@@ -38,7 +40,7 @@ function HomePage() {
 
 function App() {
   return (
-    <Router   basename="/NurseRaych2">
+    <Router   basename={import.meta.env.BASE_URL}>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/join-campaign" element={<JoinCampaignPage />} />

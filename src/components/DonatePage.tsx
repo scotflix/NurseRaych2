@@ -208,7 +208,7 @@ export function DonatePage() {
                     <div className="backdrop-blur-md bg-white/10 rounded-3xl p-6 border border-white/20">
                       <div className="w-full h-80 relative rounded-2xl overflow-hidden">
                         <img
-                          src="/NurseRaych2/images/image2.jpeg"
+                          src={`${import.meta.env.BASE_URL}images/image2.jpeg`}
                           alt="Nurse Raych with Community Family"
                           className="w-full h-full object-cover"
                         />

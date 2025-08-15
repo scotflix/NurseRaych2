@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Heart, Stethoscope } from 'lucide-react';
+import { Menu, X, Heart} from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 export function Navigation() {
@@ -45,7 +45,12 @@ export function Navigation() {
             onClick={() => navigate('/')}
           >
             <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full flex items-center justify-center">
-              <Stethoscope className="w-6 h-6 text-white" />
+              {/*<Stethoscope className="w-6 h-6 text-white" />*/}
+              <img
+                src="./favicon.ico"
+                alt="logo"
+                className="w-full h-full object-cover"
+              />
             </div>
             <span className="text-2xl font-bold text-white">NurseRaych</span>
           </div>

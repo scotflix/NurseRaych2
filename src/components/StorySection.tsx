@@ -77,7 +77,7 @@ I want to be able to work with other nurses and doctors to provide those service
     <div className="backdrop-blur-md bg-white/10 rounded-2xl p-4 border border-white/20 hover:bg-white/15 transition-all duration-300 transform hover:scale-105 overflow-hidden">
       <div className="w-full h-40 relative rounded-lg overflow-hidden">
         <img
-          src="/NurseRaych2/images/image5.jpeg"
+          src={`${import.meta.env.BASE_URL}images/image5.jpeg`}
           alt="Raych in uniform during training"
           className="w-full h-full object-cover brightness-90 hover:brightness-100 transition-all duration-300"
         />
@@ -88,7 +88,7 @@ I want to be able to work with other nurses and doctors to provide those service
     <div className="backdrop-blur-md bg-white/10 rounded-2xl p-4 border border-white/20 hover:bg-white/15 transition-all duration-300 transform hover:scale-105 overflow-hidden">
       <div className="w-full h-40 relative rounded-lg overflow-hidden">
         <img
-          src="/NurseRaych2/images/image4.jpeg"
+          src={`${import.meta.env.BASE_URL}images/image4.jpeg`}
           alt="Talking to community mothers"
           className="w-full h-full object-cover brightness-90 hover:brightness-100 transition-all duration-300"
         />
@@ -99,7 +99,7 @@ I want to be able to work with other nurses and doctors to provide those service
     <div className="backdrop-blur-md bg-white/10 rounded-2xl p-4 border border-white/20 hover:bg-white/15 transition-all duration-300 transform hover:scale-105 col-span-2 overflow-hidden">
       <div className="w-full h-32 relative rounded-lg overflow-hidden">
         <img
-          src="/NurseRaych2/images/image3.jpeg"
+          src={`${import.meta.env.BASE_URL}images/image3.jpeg`}
           alt="First sketch of the platform idea on whiteboard"
           className="w-full h-full object-cover brightness-90 hover:brightness-100 transition-all duration-300"
         />
@@ -110,7 +110,7 @@ I want to be able to work with other nurses and doctors to provide those service
     <div className="backdrop-blur-md bg-white/10 rounded-2xl p-4 border border-white/20 hover:bg-white/15 transition-all duration-300 transform hover:scale-105 col-span-2 overflow-hidden">
       <div className="w-full h-32 relative rounded-lg overflow-hidden">
         <img
-          src="/NurseRaych2/images/image2.jpeg"
+          src={`${import.meta.env.BASE_URL}images/image2.jpeg`}
           alt="Helping and supporting local elders"
           className="w-full h-full object-cover brightness-90 hover:brightness-100 transition-all duration-300"
         />

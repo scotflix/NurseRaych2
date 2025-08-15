@@ -750,7 +750,7 @@ My details:
 
 Thank you!`
                     );
-                    window.location.href = `mailto:raych61@gmail.com?subject=${subject}&body=${body}`;
+                    window.location.href = `mailto:nurseraych@gmail.com?subject=${subject}&body=${body}`;
                   }}
                   className={`bg-gradient-to-r ${badge.gradient} text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center mx-auto`}
                 >

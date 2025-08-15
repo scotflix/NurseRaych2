@@ -46,11 +46,11 @@ export function Footer() {
             <div className="space-y-3">
               <div className="flex items-center text-white/70">
                 <Mail className="w-5 h-5 mr-3 text-cyan-400" />
-                <span>rayych61@gmail.com</span>
+                <span>nurseraych@gmail.com</span>
               </div>
               <div className="flex items-center text-white/70">
                 <Phone className="w-5 h-5 mr-3 text-purple-400" />
-                <span>+1(201)282-9408</span>
+                <span></span>
               </div>
               <div className="flex items-center text-white/70">
                 <MapPin className="w-5 h-5 mr-3 text-pink-400" />
@@ -83,7 +83,7 @@ export function Footer() {
         <div className="border-t border-white/20 mt-12 pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="text-white/60 text-center md:text-left mb-4 md:mb-0">
-              © 2025 NurseRaych Health Initiative. Founded by Nurse Raych
+              © 2025 NurseRaych Health Initiative. Designed and Developed Bradley Ongus
             </div>
             
             {/* Signature */}
