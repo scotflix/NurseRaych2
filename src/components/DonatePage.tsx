@@ -1,13 +1,15 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef,
+  // useCallback
+   } from 'react';
 import {
   Droplets,
   BookOpen,
   Bus,
   HeartHandshake,
-  Play,
+ // Play,
   Quote,
-  ChevronLeft,
-  ChevronRight,
+  //ChevronLeft,
+  //ChevronRight,
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
@@ -46,6 +48,7 @@ const donationTiers = [
   },
 ];
 
+{/*
 const testimonials = [
   {
     quote: "Nurse Raych's program helped me understand my pregnancy better. My baby was born healthy because of the knowledge I gained.",
@@ -76,7 +79,7 @@ interface YouTubeInlinePlayerProps {
 export function YouTubeInlinePlayer({
   videoId,
   title = 'Watch My Video',
-  subtitle = 'Thank You From Nurse Raych',
+  subtitle = 'Thank You Frdjom Nurse Raych',
 }: YouTubeInlinePlayerProps) {
   const [playing, setPlaying] = useState(false);
 
@@ -87,6 +90,8 @@ export function YouTubeInlinePlayer({
       setPlaying(true);
     }
   };
+
+  
 
   return (
     <div className="text-center max-w-lg mx-auto">
@@ -133,9 +138,10 @@ export function YouTubeInlinePlayer({
   );
 }
 
+*/}
 export function DonatePage() {
   const [isVisible, setIsVisible] = useState(false);
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  //const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [selectedAmount, setSelectedAmount] = useState('$25');
   const sectionRef = useRef<HTMLElement>(null);
   const navigate = useNavigate();
@@ -158,6 +164,8 @@ export function DonatePage() {
     return () => observer.disconnect();
   }, []);
 
+  {/*
+
   const nextTestimonial = useCallback(() => {
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
   }, []);
@@ -166,17 +174,19 @@ export function DonatePage() {
     setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   }, []);
 
+  */}
+
   const handleDonate = (amount: string) => {
     setSelectedAmount(amount);
     // route to donate details or payment page; adjust path/query as needed
     navigate('/donate', { state: { amount } });
   };
-
+{/*
   // Example video props; replace videoId with dynamic value if needed
   const videoId = '9bw4TeFdO2U'; // placeholder
   const videoTitle = 'A Message from Nurse Raych';
   const videoSubtitle = 'See how your gift changes lives';
-
+*/}
   return (
     <section ref={sectionRef} id="donate-section" className="py-20 relative">
       <div className="container mx-auto px-6">
@@ -290,7 +300,7 @@ export function DonatePage() {
           </div>
         </div>
 
-        {/* See the Difference Section */}
+        {/* See the Difference Section *
         <div
           className={`mb-20 transition-all duration-1000 delay-500 ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
@@ -301,9 +311,9 @@ export function DonatePage() {
               See the Difference You're Making
             </h2>
           </div>
-
+{/*
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Video Message */}
+            {/* Video Message *
             <div className="backdrop-blur-md bg-white/10 rounded-3xl p-8 border border-white/20">
               <YouTubeInlinePlayer
                 videoId={videoId}
@@ -313,7 +323,7 @@ export function DonatePage() {
               
             </div>
 
-            {/* Testimonial Carousel */}
+            {/* Testimonial Carousel *
             <div className="backdrop-blur-md bg-white/10 rounded-3xl p-8 border border-white/20 relative">
               <div className="flex items-center justify-between absolute top-4 left-4 right-4 z-10">
                 <button
@@ -362,7 +372,7 @@ export function DonatePage() {
             </div>
           </div>
         </div>
-
+*/}
         {/* Final Message */}
         <div
           className={`max-w-4xl mx-auto transition-all duration-1000 delay-1100 ${

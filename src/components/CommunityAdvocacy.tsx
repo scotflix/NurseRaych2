@@ -1,7 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
-import { Users, Heart, MessageCircle, Handshake, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Users, Heart, MessageCircle, Handshake, 
+  //Quote, ChevronLeft, ChevronRight 
+} from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
+/*
 const testimonials = [
   {
     quote: "I joined this platform because of Raych's passion. She walks with the people she helps.",
@@ -22,7 +25,7 @@ const testimonials = [
     avatar: "👩🏾"
   }
 ];
-
+*/
 const campaigns = [
   {
     id: 'maternal-wellness',
@@ -49,7 +52,7 @@ const campaigns = [
 
 export function CommunityAdvocacy() {
   const [isVisible, setIsVisible] = useState(false);
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  //const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
   const navigate = useNavigate();
 
@@ -70,6 +73,7 @@ export function CommunityAdvocacy() {
     return () => observer.disconnect();
   }, []);
 
+  {/*
   const nextTestimonial = () => {
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
   };
@@ -77,7 +81,7 @@ export function CommunityAdvocacy() {
   const prevTestimonial = () => {
     setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
-
+*/}
   const handleJoinCampaign = () => {
     navigate('/join-campaign');
   };
@@ -129,7 +133,7 @@ export function CommunityAdvocacy() {
           </div>
         </div>
 
-        {/* Testimonials Slider */}
+        {/* Testimonials Slider *
         <div className={`mb-16 transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           <h3 className="text-3xl font-bold text-white text-center mb-12">Community Voices</h3>
           
@@ -162,7 +166,7 @@ export function CommunityAdvocacy() {
                 <p className="text-white/70 mt-2">{testimonials[currentTestimonial].role}</p>
               </div>
               
-              {/* Testimonial Dots */}
+              {/* Testimonial Dots 
               <div className="flex justify-center mt-8 space-x-3">
                 {testimonials.map((_, index) => (
                   <button
@@ -179,7 +183,7 @@ export function CommunityAdvocacy() {
             </div>
           </div>
         </div>
-
+*/}
         {/* Donor Quote */}
         <div className={`max-w-4xl mx-auto transition-all duration-1000 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           <div className="backdrop-blur-md bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-3xl p-8 border border-white/20 text-center">
