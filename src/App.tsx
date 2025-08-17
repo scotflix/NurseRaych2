@@ -1,9 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import SEO from './components/SEO';
 import { Navigation } from './components/Navigation';
 import { Hero } from './components/Hero';
 import { StorySection } from './components/StorySection';
 import { Timeline } from './components/Timeline';
-//import { KnowledgeCurator } from './components/KnowledgeCurator';
+// import { KnowledgeCurator } from './components/KnowledgeCurator';
 import { CommunityAdvocacy } from './components/CommunityAdvocacy';
 import { MeetNurseRaych } from './components/MeetNurseRaych';
 import { DonatePage } from './components/DonatePage';
@@ -15,37 +16,163 @@ import { DonationSuccessPage } from './components/DonationSuccessPage';
 import Founders from './components/Founders';
 
 function HomePage() {
+  const homeStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Nurse Raych - Healthcare Advocacy & Community Support",
+    "description": "Join Nurse Raych in transforming healthcare through advocacy, education, and community support.",
+    "url": "https://nurseraychfoundation.org",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://nurseraychfoundation.org"
+      }]
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      {/* Animated Background Elements */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute top-3/4 right-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
-      </div>
-      
+    <>
+      <SEO 
+        title="Nurse Raych - Healthcare Advocacy & Community Support"
+        description="Join Nurse Raych in transforming healthcare through advocacy, education, and community support. Empowering patients and healthcare professionals to create meaningful change."
+        structuredData={homeStructuredData}
+      />
       <Navigation />
       <Hero />
       <StorySection />
       <Timeline />
-      {/*<KnowledgeCurator /> */}
+      {/* <KnowledgeCurator /> */}
       <CommunityAdvocacy />
       <MeetNurseRaych />
       <DonatePage />
       <Founders />
       <Footer />
-    </div>
+    </>
   );
 }
 
 function App() {
   return (
-    <Router   basename={import.meta.env.BASE_URL}>
+    <Router >
       <Routes>
+        {/* Home */}
         <Route path="/" element={<HomePage />} />
-        <Route path="/join-campaign" element={<JoinCampaignPage />} />
-        <Route path="/donate" element={<DonationCheckoutPage />} />
-        <Route path="/donation-success" element={<DonationSuccessPage />}/>
+
+        {/* Story */}
+        <Route path="/story" element={
+          <>
+            <SEO 
+              title="Raych's Story - Nurse Raych Foundation"
+              description="Discover the inspiring journey and mission behind the Nurse Raych Foundation."
+              canonical="https://nurseraychfoundation.org/story"
+            />
+            <Navigation />
+            <StorySection />
+            <Footer />
+          </>
+        } />
+
+        {/* Timeline */}
+        <Route path="/timeline" element={
+          <>
+            <SEO 
+              title="Timeline - Nurse Raych Foundation"
+              description="Explore the milestones and impact timeline of Nurse Raych Foundation."
+              canonical="https://nurseraychfoundation.org/timeline"
+            />
+            <Navigation />
+            <Timeline />
+            <Footer />
+          </>
+        } />
+
+        {/* Community Advocacy */}
+        <Route path="/community-advocacy" element={
+          <>
+            <SEO 
+              title="Community Advocacy - Nurse Raych Foundation"
+              description="Learn about our community advocacy initiatives for healthcare awareness and education."
+              canonical="https://nurseraychfoundation.org/community-advocacy"
+            />
+            <Navigation />
+            <CommunityAdvocacy />
+            <Footer />
+          </>
+        } />
+
+        {/* Meet Nurse Raych */}
+        <Route path="/meet-nurse-raych" element={
+          <>
+            <SEO 
+              title="Meet Nurse Raych - Nurse Raych Foundation"
+              description="Meet the founder of Nurse Raych Foundation and her dedication to healthcare advocacy."
+              canonical="https://nurseraychfoundation.org/meet-nurse-raych"
+            />
+            <Navigation />
+            <MeetNurseRaych />
+            <Footer />
+          </>
+        } />
+
+        {/* Founders */}
+        <Route path="/founders" element={
+          <>
+            <SEO 
+              title="Founders - Nurse Raych Foundation"
+              description="Learn about the founders and leadership of the Nurse Raych Foundation."
+              canonical="https://nurseraychfoundation.org/founders"
+            />
+            <Navigation />
+            <Founders />
+            <Footer />
+          </>
+        } />
+
+        {/* Join Campaign */}
+        <Route path="/join-campaign" element={
+          <>
+            <SEO 
+              title="Join Our Campaign - Nurse Raych Foundation"
+              description="Be part of the Nurse Raych Foundation campaign for better healthcare advocacy."
+              canonical="https://nurseraychfoundation.org/join-campaign"
+            />
+            
+            <JoinCampaignPage />
+            <Footer />
+          </>
+        } />
+
+        {/* Donate */}
+        <Route path="/donate" element={
+          <>
+            <SEO 
+              title="Donate - Nurse Raych Foundation"
+              description="Support the Nurse Raych Foundation through your generous donations."
+              canonical="https://nurseraychfoundation.org/donate"
+            />
+           
+            <DonationCheckoutPage />
+            <Footer />
+          </>
+        } />
+
+        {/* Donation Success */}
+        <Route path="/donation-success" element={
+          <>
+            <SEO 
+              title="Donation Success - Nurse Raych Foundation"
+              description="Thank you for supporting the Nurse Raych Foundation! Your donation makes a difference."
+              canonical="https://nurseraychfoundation.org/donation-success"
+              noIndex={true}  /* prevent indexing since it's transactional */
+            />
+            <Navigation />
+            <DonationSuccessPage />
+            <Footer />
+          </>
+        } />
       </Routes>
     </Router>
   );
