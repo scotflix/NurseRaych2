@@ -5,7 +5,7 @@ const testimonials = [
   {
     quote:
       "Master’s Student in Nurse Anesthesia, driving the mission to provide free surgical and anesthesia services to underserved communities.",
-    author: "Rachel",
+    author: "Rachel ",
     role: "Founder & Visionary Leader",
     avatar: `${import.meta.env.BASE_URL}images/image7.jpeg`,
   },
@@ -19,7 +19,7 @@ const testimonials = [
   {
     quote:
       "Assistant Nurse and Community Health Officer, dedicated to connecting the organization’s mission with the needs of the people we serve.",
-    author: "Lisa",
+    author: "Josephine Akinyi",
     role: "Community Health Advocate",
     avatar: `${import.meta.env.BASE_URL}images/image9.png`,
   },
