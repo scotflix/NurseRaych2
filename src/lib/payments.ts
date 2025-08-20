@@ -150,7 +150,7 @@ export const getPreferredPaymentMethods = (location: string): string[] => {
 };
 
 // Validate payment form
-export const validatePaymentForm = (formData: any, paymentMethod: string): string[] => {
+export const validatePaymentForm = (formData: any): string[] => {
   const errors: string[] = [];
   
   if (!formData.name?.trim()) {
@@ -160,10 +160,7 @@ export const validatePaymentForm = (formData: any, paymentMethod: string): strin
   if (!formData.email?.trim() || !/\S+@\S+\.\S+/.test(formData.email)) {
     errors.push('Valid email is required');
   }
-  
-  if (paymentMethod === 'flutterwave' && !formData.phone?.trim()) {
-    errors.push('Phone number is required for mobile money payments');
-  }
+ 
   
   return errors;
 };

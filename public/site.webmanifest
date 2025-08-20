@@ -1,0 +1,24 @@
+{
+  "name": "Nurse Raych - Healthcare Advocacy & Community Support",
+  "short_name": "NurseRaych",
+  "description": "Join Nurse Raych in transforming healthcare through advocacy, education, and community support.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#7c3aed",
+  "icons": [
+    {
+      "src": "/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "orientation": "portrait-primary",
+  "categories": ["health", "medical", "community", "education"],
+  "lang": "en-US"
+}

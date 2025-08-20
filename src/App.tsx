@@ -168,7 +168,7 @@ function App() {
               canonical="https://nurseraychfoundation.org/donation-success"
               noIndex={true}  /* prevent indexing since it's transactional */
             />
-            <Navigation />
+            
             <DonationSuccessPage />
             <Footer />
           </>
