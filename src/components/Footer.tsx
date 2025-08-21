@@ -48,10 +48,7 @@ export function Footer() {
                 <Mail className="w-5 h-5 mr-3 text-cyan-400" />
                 <span>nurseraych@gmail.com</span>
               </div>
-              <div className="flex items-center text-white/70">
-                <Phone className="w-5 h-5 mr-3 text-purple-400" />
-                <span></span>
-              </div>
+              
               <div className="flex items-center text-white/70">
                 <MapPin className="w-5 h-5 mr-3 text-pink-400" />
                 <span>New Jersey, USA</span>
