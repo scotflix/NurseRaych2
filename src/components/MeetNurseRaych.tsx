@@ -19,11 +19,6 @@ const topTips = [
     color: "from-cyan-500 to-blue-500"
   },
   {
-    tip: "Empower your daughters with knowledge",
-    icon: BookOpen,
-    color: "from-blue-500 to-purple-500"
-  },
-  {
     tip: "Mental health matters just as much as physical",
     icon: Brain,
     color: "from-purple-500 to-pink-500"
@@ -137,7 +132,7 @@ export function MeetNurseRaych() {
     <div className="backdrop-blur-md bg-white/10 rounded-2xl p-4 border border-white/20 hover:bg-white/15 transition-all duration-300 transform hover:scale-105 group overflow-hidden">
       <div className="w-full h-48 relative rounded-lg overflow-hidden mb-4">
         <img
-          src={`${import.meta.env.BASE_URL}images/image1.jpeg`}
+          src={`${import.meta.env.BASE_URL}images/image10.jpeg`}
           alt="Raych providing care"
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 brightness-90 group-hover:brightness-100"
         />
@@ -233,9 +228,7 @@ export function MeetNurseRaych() {
           Email Raych Directly
         </a>
         
-        <p className="text-white/70 mt-4 text-sm">
-          Or send a text to : 
-        </p>
+        
       </div>
     </div>
   </div>

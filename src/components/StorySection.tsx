@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Quote, Heart, MapPin } from 'lucide-react';
+import { Quote } from 'lucide-react';
 
 export function StorySection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -43,31 +43,7 @@ I want to be able to work with other nurses and doctors to provide those service
               </p>
             </div>
 
-            {/* Personal Notes */}
-            <div className="space-y-4">
-              <h3 className="text-2xl font-bold text-white mb-4">Personal Notes from Raych</h3>
-              
-              <div className="backdrop-blur-md bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-2xl p-6 border border-white/20">
-                <Quote className="w-8 h-8 text-cyan-400 mb-4" />
-                <p className="text-white/90 italic">
-                  "I remember my first day in a rural clinic. A mother walked 10 miles with her sick child, only to find we had no medicine. That day changed everything for me."
-                </p>
-              </div>
-
-              <div className="backdrop-blur-md bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-2xl p-6 border border-white/20">
-                <Heart className="w-8 h-8 text-pink-400 mb-4" />
-                <p className="text-white/90 italic">
-                  "Healthcare isn't just about treating illness—it's about empowering communities with knowledge and hope."
-                </p>
-              </div>
-
-              <div className="backdrop-blur-md bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-2xl p-6 border border-white/20">
-                <MapPin className="w-8 h-8 text-purple-400 mb-4" />
-                <p className="text-white/90 italic">
-                  "Every village I visit teaches me something new. My patients are my greatest teachers."
-                </p>
-              </div>
-            </div>
+            
           </div>
 
           {/* Photo Gallery */}

@@ -68,7 +68,7 @@ export function Hero() {
           <div className="w-80 h-80 mx-auto rounded-full bg-gradient-to-br from-purple-400 via-pink-400 to-cyan-400 p-1 shadow-2xl">
             <div className="w-full h-full rounded-full overflow-hidden bg-slate-800 flex items-center justify-center relative border-4 border-white/20">
               <img
-                src={`${import.meta.env.BASE_URL}images/image7.jpeg`}
+                src={`${import.meta.env.BASE_URL}images/image1.jpeg`}
                 alt="Nurse Raych"
                 className="w-full h-full object-center"
               />
