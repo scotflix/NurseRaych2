@@ -14,6 +14,7 @@ import { DonationCheckoutPage } from './components/DonationCheckoutPage';
 import './App.css';
 import { DonationSuccessPage } from './components/DonationSuccessPage';
 import Founders from './components/Founders';
+import { AboutPage } from './components/about-us';
 
 function HomePage() {
   const homeStructuredData = {
@@ -42,6 +43,7 @@ function HomePage() {
       />
       <Navigation />
       <Hero />
+      <AboutPage />
       <StorySection />
       <Timeline />
       {/* <KnowledgeCurator /> */}
@@ -127,7 +129,7 @@ function App() {
             />
             <Navigation />
             <Founders />
-            <Footer />
+            
           </>
         } />
 
@@ -173,6 +175,9 @@ function App() {
             <Footer />
           </>
         } />
+
+        <Route path="/about" element={<AboutPage />} />
+
       </Routes>
     </Router>
   );

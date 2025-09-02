@@ -67,7 +67,7 @@ export function Navigation() {
               onClick={() => scrollToSection('story-section')}
               className="text-white/90 hover:text-white transition-colors"
             >
-              Her Story
+              About Us
             </button>
             <button 
               onClick={() => scrollToSection('timeline-section')}

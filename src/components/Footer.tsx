@@ -1,5 +1,5 @@
 
-import { Heart, Stethoscope, Mail, MapPin, Phone, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { Heart, Stethoscope, Mail, MapPin,  Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 
 export function Footer() {
   return (
