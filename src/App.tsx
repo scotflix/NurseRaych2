@@ -51,7 +51,7 @@ function HomePage() {
       <MeetNurseRaych />
       <DonatePage />
       <Founders />
-      <Footer />
+      
     </>
   );
 }
