@@ -50,8 +50,7 @@ function HomePage() {
       <CommunityAdvocacy />
       <MeetNurseRaych />
       <DonatePage />
-      <Founders />
-      
+      <Footer />
     </>
   );
 }
