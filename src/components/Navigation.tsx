@@ -64,7 +64,9 @@ export function Navigation() {
               Home
             </button>
             <button 
-              onClick={() => scrollToSection('/about')}
+               onClick={() => {navigate('/about');
+                setIsOpen(false);
+}}
               className="text-white/90 hover:text-white transition-colors"
             >
               About Us
@@ -123,7 +125,9 @@ export function Navigation() {
                 Home
               </button>
               <button 
-                onClick={() => scrollToSection('/about')}
+                 onClick={() => { navigate('/about');
+                   setIsOpen(false);
+                  }}
                 className="text-white/90 hover:text-white transition-colors text-left"
               >
                 About Us
