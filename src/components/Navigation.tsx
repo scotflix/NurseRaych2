@@ -64,7 +64,7 @@ export function Navigation() {
               Home
             </button>
             <button 
-              onClick={() => scrollToSection('story-section')}
+              onClick={() => scrollToSection('/about')}
               className="text-white/90 hover:text-white transition-colors"
             >
               About Us
@@ -123,10 +123,10 @@ export function Navigation() {
                 Home
               </button>
               <button 
-                onClick={() => scrollToSection('story-section')}
+                onClick={() => scrollToSection('/about')}
                 className="text-white/90 hover:text-white transition-colors text-left"
               >
-                Her Story
+                About Us
               </button>
               <button 
                 onClick={() => scrollToSection('timeline-section')}
